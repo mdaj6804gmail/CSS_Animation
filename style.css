@@ -1,0 +1,197 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&family=Shippori+Antique+B1&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Poppins", sans-serif;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  min-height: 100vh;
+
+  background: #333;
+}
+.imgBx {
+  max-width: 200px;
+}
+img {
+  width: 100%;
+}
+.container {
+  position: relative;
+  display: flex;
+  padding: 80px 40px;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 80px;
+}
+.card {
+  position: relative;
+  width: 350px;
+  height: 180px;
+  background: #fff;
+  transition: 0.5s;
+}
+.card:hover {
+  height: 450px;
+}
+.card .lines {
+  position: absolute;
+  inset: 0px;
+  background: rgb(0, 0, 0);
+  overflow: hidden;
+}
+.card .lines::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 700px;
+  height: 120px;
+  background: linear-gradient(
+    transparent,
+    #45f3ff,
+    #45f3ff,
+    #45f3ff,
+    transparent
+  );
+  animation: animate 4s linear infinite;
+  animation-play-state: paused;
+}
+.card:hover .lines::before {
+  animation-play-state: running;
+}
+@keyframes animate {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.card .lines::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #724e4e;
+}
+
+.card .imgBx {
+  position: absolute;
+  width: 150px;
+  height: 150px;
+  top: -60px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+  z-index: 10;
+  overflow: hidden;
+  display: flex;
+  background: #000;
+  align-items: center;
+  justify-content: center;
+}
+.card:hover .imgBx {
+  width: 200px;
+  height: 200px;
+  top: 25px;
+}
+.card .imgBx::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 500px;
+  height: 150px;
+  transform: translate(-50%, -50%);
+  background: linear-gradient(
+    transparent,
+    #4edf0b,
+    #4edf0b,
+    #4edf0b,
+    transparent
+  );
+  animation: animate2 6s linear infinite;
+  animation-play-state: paused;
+}
+.card:hover .imgBx::before {
+  animation-play-state: running;
+}
+@keyframes animate2 {
+  0% {
+    transform: translate(-50%, -50%) rotate(0deg);
+  }
+  100% {
+    transform: translate(-50%, -50%) rotate(360deg);
+  }
+}
+.card .imgBx::after {
+  content: "";
+  position: absolute;
+  inset: 3px;
+  background: #292922;
+}
+
+.card .imgBx img {
+  position: absolute;
+  width: 100px;
+  z-index: 1;
+  filter: invert(1);
+  opacity: 0.5;
+  transition: 0.5s;
+}
+.card:hover .imgBx img {
+  filter: invert(0);
+  opacity: 1;
+}
+.card .content {
+  position: absolute;
+  display: flex;
+  width: 100%;
+  height: 100%;
+  justify-content: center;
+  align-self: center;
+  overflow: hidden;
+}
+.card .content .detels {
+  padding: 30px 20px;
+  text-align: center;
+  width: 100%;
+  transform: translateY(105px);
+  color: #fff;
+}
+.card:hover .content .detels {
+  transform: translateY(221px);
+    
+}
+.card .content .detels h2{
+    font-size: 1.5em;
+    font-weight: 600;
+    color: #45f3ff;
+    line-height: 1.2em;
+}
+
+.card .content .detels p{
+opacity: 0;
+transition: .5s;
+
+}
+.card:hover .content .detels p{
+opacity: 1;
+
+}
+.card:hover .content .detels a{
+display: inline-block;
+padding: 8px 16px;
+background: #45f3ff;
+color: #292922;
+font-weight: 600;
+text-decoration: none;
+margin-top: 10px;
+
+}
